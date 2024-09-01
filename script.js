@@ -14,3 +14,10 @@ document.querySelector('.nav-toggle').addEventListener('click', function () {
   this.classList.toggle('active');
   document.querySelector('nav').classList.toggle('active');
 });
+
+// Script para actualizar el contador de caracteres
+  document.getElementById('comentarios').addEventListener('input', function () {
+    var texto = this.value;
+    var contador = document.getElementById('contador');
+    contador.textContent = texto.length + "/800";
+  });
