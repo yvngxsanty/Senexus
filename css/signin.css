@@ -1,0 +1,98 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0b1a12 0%, #163f33 100%); /* Fondo degradado en tonos de verde oscuro */
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 350px;
+  padding: 25px;
+  background-color: rgba(13, 31, 22, 0.85); /* Verde oscuro translúcido */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(1, 139, 98, 0.5); /* Sombra pronunciada */
+  text-align: center;
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #A4B494; /* Verde grisáceo claro */
+}
+
+.form-signin input[type="email"],
+.form-signin input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido para inputs */
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-signin input[type="email"]:focus,
+.form-signin input[type="password"]:focus {
+  border-color: #3D9970; /* Verde claro */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo ligeramente más claro */
+  outline: none;
+}
+
+.btn-success {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3D9970; /* Verde claro */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-success:hover {
+  background-color: #2E7D57; /* Verde más oscuro al pasar el ratón */
+}
+
+label {
+  color: #A4B494; /* Verde grisáceo claro */
+  margin-bottom: 5px;
+}
+
+h1.fw-normal {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 1.7rem;
+}
+
+.logo {
+  width: 72px;
+  height: 57px;
+  margin-bottom: 20px;
+}
+
+.checkbox label {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox input {
+  margin-right: 10px;
+}

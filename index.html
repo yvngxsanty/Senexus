@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Red Social - Social Network">
+  <link rel="icon" href="css/logo.png" type="image/x-icon">
+  <link href="css/styles.css" rel="stylesheet">
+  <title>Senexus</title>
+</head>
+
+<body>
+  <header class="container">
+    <a href="./index.html" class="logo">
+      <img src="css/logo-nombre.png" alt="Senexus Logo">
+    </a>
+
+    <!-- Botón del menú hamburguesa, solo visible en dispositivos móviles -->
+    <div class="nav-toggle">☰</div>
+
+    <nav>
+      <ul>
+        <li><a href="./news.html">Novedades</a></li>
+        <li><a href="./friends.html">Amigos</a></li>
+        <li><a href="./mydocuments.html">Mis Documentos</a></li>
+        <li><a href="./support.html">Soporte</a></li>
+      </ul>
+    </nav>
+
+    <div class="auth-buttons">
+      <button type="button" onclick="window.location.href='login.html';" class="custom-button">Entrar</button>
+      <button type="button" onclick="window.location.href='register.html';" class="custom-button">Registrar</button>
+    </div>
+  </header>
+
+  <main class="body_container">
+    <div class="row">
+      <section class="text-image-container">
+        <div class="text-content">
+          <h1 class="black">Proyecto Senexus (Beta)</h1>
+          <h2 class="blue">Bienvenido a la red oficial del Sena</h2>
+          <p>Encuentra amigos, organiza tus documentos, crea comunidades para tus grupos o cursos. Senexus, la red
+            social de aprendices para aprendices.</p>
+        </div>
+        <div class="gif-container">
+          <img src="css/main-logo.gif" alt="Gif de bienvenida">
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <form action="https://formsubmit.co/yvngxsanty.contact@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <textarea name="mensaje" placeholder="Escribe tu sugerencia aquí" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

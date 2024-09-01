@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Red Social - Social Network">
+  <link rel="icon" href="css/logo.png" type="image/x-icon">
+  <link href="css/styles.css" rel="stylesheet">
+  <title>Senexus</title>
+  <style>
+    .watermark {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 10vw;
+      color: rgba(255, 255, 255, 0.05); /* Blanco extremadamente transparente */
+      z-index: 0;
+      pointer-events: none; /* Evita que interfiera con la interacción */
+      user-select: none; /* Evita que se pueda seleccionar el texto */
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    body {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="container">
+    <a href="./index.html" class="logo">
+      <img src="css/logo-nombre.png" alt="Senexus Logo">
+    </a>
+
+    <div class="nav-toggle">☰</div>
+
+    <nav>
+      <ul>
+        <li><a href="./friends.html">Amigos</a></li>
+        <li><a href="./mydocuments.html">Mis Documentos</a></li>
+        <li><a href="./support.html">Soporte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="watermark">SOON!</div>
+  <!-- Marca de agua con el mensaje "404 Error". Puedes cambiarlo a "Próximamente (Soon)" si lo prefieres. -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
