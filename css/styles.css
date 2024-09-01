@@ -195,7 +195,7 @@ footer textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  resize: vertical;
+  resize: none; /* Deshabilita el cambio de tamaño */
   box-sizing: border-box;
 }
 
@@ -213,25 +213,17 @@ footer button:hover {
   background-color: #2E7D57; /* Verde más oscuro en hover */
 }
 
+#contador {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #888;
+}
+
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
-  .text-image-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .gif-container {
-    margin-top: 20px;
-  }
-
   footer textarea {
     max-width: 100%;
-    resize: none;
     width: 300px;
     height: 150px;
-    max-width: 100%;
-    max-height: 200px;
-    min-width: 100px;
-    min-height: 50px;
   }
 }
