@@ -53,7 +53,12 @@
   <footer>
     <form action="https://formsubmit.co/yvngxsanty.contact@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
-      <textarea name="mensaje" placeholder="Escribe tu sugerencia aquí" required></textarea>
+  
+      <!-- Textarea con límite de caracteres y contador -->
+      <textarea id="comentarios" name="mensaje" placeholder="Escribe tu sugerencia aquí" maxlength="800" required></textarea>
+      <span id="contador">0/800</span>
+  
+      <!-- Botón de envío -->
       <button type="submit">Enviar</button>
     </form>
   </footer>
