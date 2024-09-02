@@ -34,7 +34,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function () {
    document.getElementById('webhookForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
     
-    const message = document.getElementById('comentarios').value; // Cambié 'username' por 'comentarios'
+    const message = document.getElementById('comentarios').value;
 
     if (!message) {
         alert('Por favor, escribe un mensaje.');
