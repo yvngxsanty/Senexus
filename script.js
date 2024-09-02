@@ -30,34 +30,55 @@ document.querySelector('.nav-toggle').addEventListener('click', function () {
        contador.textContent = `${comentarios.value.length}/800`;
    });
 
-   // Enviar a webhook de Discord
+   // Sugerencias en Discord
    document.getElementById('webhookForm').addEventListener('submit', function(e) {
-       e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
-       
-       const mensaje = comentarios.value;
-       const webhookURL = 'https://discord.com/api/webhooks/1279982448100511774/c-fYXiIgzZ6fR4M2QBWE4RzdIIVwVEY9SkWqfmFvMkZn3SVHR5ylwzsdPdpPq1UEJkto';
+    e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+    
+    const message = document.getElementById('comentarios').value; // Cambié 'username' por 'comentarios'
 
-       const payload = {
-           content: mensaje
-       };
+    if (!message) {
+        alert('Por favor, escribe un mensaje.');
+        return; // No continuar si el campo está vacío
+    }
 
-       fetch(webhookURL, {
-           method: 'POST',
-           headers: {
-               'Content-Type': 'application/json'
-           },
-           body: JSON.stringify(payload)
-       })
-       .then(response => {
-           if (response.ok) {
-               alert('Mensaje enviado con éxito a Discord');
-               comentarios.value = ''; // Limpiar el campo de texto
-               contador.textContent = '0/800'; // Reiniciar el contador
-           } else {
-               alert('Hubo un error al enviar el mensaje');
-           }
-       })
-       .catch(error => {
-           alert('Error: ' + error.message);
-       });
-   });
+    const webhookURL = 'https://discord.com/api/webhooks/1279982448100511774/c-fYXiIgzZ6fR4M2QBWE4RzdIIVwVEY9SkWqfmFvMkZn3SVHR5ylwzsdPdpPq1UEJkto';
+
+    // ID del rol que quieres mencionar
+    const roleID = '1280004764116975616';
+
+    const payload = {
+        content: `<@&${roleID}>`, // Menciona el rol en el mensaje normal
+        embeds: [{
+            title: "Nuevo mensaje de sugerencia",
+            description: message,
+            color: 65280, // Puedes cambiar el color (en formato decimal)
+            footer: {
+                text: `Enviado por un usuario anónimo`
+            },
+            timestamp: new Date().toISOString() // Formato ISO para el timestamp
+        }]
+    };
+
+    console.log("Enviando payload:", payload); // Verificar en la consola si el payload está correcto
+
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Mensaje enviado con éxito a Discord');
+            document.getElementById('comentarios').value = ''; // Limpiar el textarea después de enviar
+            document.getElementById('contador').textContent = '0/800'; // Reiniciar el contador
+        } else {
+            return response.text().then(text => { throw new Error(text); });
+        }
+    })
+    .catch(error => {
+        console.error('Error al enviar el mensaje:', error);
+        alert('Hubo un error al enviar el mensaje: ' + error.message);
+    });
+});
